@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Indian Train System - Ultimate Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #e6f7ff;
+      color: #222;
+    }
+
+    header {
+      background: #005f73;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .section {
+      padding: 30px 20px;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #0a9396;
+    }
+
+    .input-group {
+      margin: 10px 0;
+    }
+
+    input, select, button {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+      width: 100%;
+      margin-top: 5px;
+    }
+
+    button {
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #023e8a;
+    }
+
+    .result-box {
+      margin-top: 15px;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    img {
+      max-width: 100%;
+      margin-top: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
+      border-radius: 10px;
+      border: none;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: #005f73;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    .img-title {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 4px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Indian Train System 🚆</h1>
+    <p>With Fare Calculator, Platform Predictor & More</p>
+  </header>
+
+  <!-- Booking Simulator -->
+  <div class="section">
+    <h2>🎟️ Book Tickets (Simulator)</h2>
+    <div class="input-group">
+      <label>From Station:</label>
+      <input type="text" id="from" placeholder="e.g., Delhi">
+    </div>
+    <div class="input-group">
+      <label>To Station:</label>
+      <input type="text" id="to" placeholder="e.g., Kolkata">
+    </div>
+    <div class="input-group">
+      <label>Class:</label>
+      <select id="class">
+        <option>Sleeper (SL)</option>
+        <option>AC 3 Tier (3A)</option>
+        <option>AC 2 Tier (2A)</option>
+        <option>AC First Class (1A)</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label>Date of Journey:</label>
+      <input type="date" id="journeyDate">
+    </div>
+    <button onclick="simulateBooking()">Book Ticket</button>
+    <div id="bookingResult" class="result-box"></div>
+    <img src="https://images.unsplash.com/photo-1644311018756-d1c4263ed227" alt="Ticket Booking">
+    <div class="img-title">Indian Railway E-Ticket Booking</div>
+  </div>
+
+  <!-- Fare Calculator -->
+  <div class="section">
+    <h2>💰 Fare Calculator</h2>
+    <div class="input-group">
+      <label>Distance (km):</label>
+      <input type="number" id="fareDistance" placeholder="e.g., 800">
+    </div>
+    <div class="input-group">
+      <label>Class:</label>
+      <select id="fareClass">
+        <option value="sl">Sleeper (SL)</option>
+        <option value="3a">AC 3 Tier (3A)</option>
+        <option value="2a">AC 2 Tier (2A)</option>
+        <option value="1a">AC First Class (1A)</option>
+      </select>
+    </div>
+    <button onclick="calculateFare()">Calculate</button>
+    <div id="fareResult" class="result-box"></div>
+    <img src="https://images.unsplash.com/photo-1563472454749-6f65f2ed8b34" alt="Train Seats">
+    <div class="img-title">Coach and Class Layout</div>
+  </div>
+
+  <!-- Platform Predictor -->
+  <div class="section">
+    <h2>🏟️ Platform Predictor</h2>
+    <div class="input-group">
+      <label>Train Number:</label>
+      <input type="text" id="platformTrain" placeholder="e.g., 12951">
+    </div>
+    <div class="input-group">
+      <label>Station Name:</label>
+      <input type="text" id="platformStation" placeholder="e.g., Mumbai Central">
+    </div>
+    <button onclick="predictPlatform()">Predict</button>
+    <div id="platformResult" class="result-box"></div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Mumbai_Central_platforms.jpg/1280px-Mumbai_Central_platforms.jpg" alt="Railway Platform">
+    <div class="img-title">Platform View - Mumbai Central</div>
+  </div>
+
+  <!-- Nearby Stations -->
+  <div class="section">
+    <h2>📍 Nearby Railway Stations</h2>
+    <button onclick="findStations()">📡 Use My Location</button>
+    <div id="nearbyStations" class="result-box"></div>
+    <img src="https://images.unsplash.com/photo-1653822340324-0d7b5dd91a13" alt="Train Station Map">
+    <div class="img-title">Map-based Station Search</div>
+  </div>
+
+  <!-- Live Train Tracker -->
+  <div class="section">
+    <h2>📡 Live Train Tracker</h2>
+    <iframe src="https://etrain.info/in" title="Live Tracker"></iframe>
+    <div class="img-title">Live Tracking Powered by etrain.info</div>
+  </div>
+
+  <!-- Indian Rail Map -->
+  <div class="section">
+    <h2>🗺️ Indian Railway Map</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Indian_Railway_Network_Map.svg" alt="Indian Railway Map">
+    <div class="img-title">Complete Network Map of Indian Railways</div>
+  </div>
+
+  <footer>
+    🚆 Created for Class 10 Students | Educational Project | © 2025 Himanshu Shekhar
+  </footer>
+
+  <script>
+    function simulateBooking() {
+      const from = document.getElementById("from").value;
+      const to = document.getElementById("to").value;
+      const trainClass = document.getElementById("class").value;
+      const date = document.getElementById("journeyDate").value;
+
+      if (!from || !to || !date) {
+        document.getElementById("bookingResult").innerText = "Please fill all fields!";
+        return;
+      }
+
+      document.getElementById("bookingResult").innerHTML =
+        `🎟️ Ticket booked (simulation): <strong>${from}</strong> ➝ <strong>${to}</strong> on <strong>${date}</strong> in <strong>${trainClass}</strong>`;
+    }
+
+    function calculateFare() {
+      const km = parseFloat(document.getElementById("fareDistance").value);
+      const trainClass = document.getElementById("fareClass").value;
+      if (isNaN(km) || km <= 0) {
+        document.getElementById("fareResult").innerText = "Enter a valid distance.";
+        return;
+      }
+
+      let ratePerKm = {
+        sl: 0.6, "3a": 1.8, "2a": 2.5, "1a": 3.5
+      }[trainClass];
+
+      const fare = (ratePerKm * km).toFixed(2);
+      document.getElementById("fareResult").innerHTML =
+        `💰 Estimated fare for ${km} km in <strong>${trainClass.toUpperCase()}</strong>: ₹<strong>${fare}</strong>`;
+    }
+
+    function predictPlatform() {
+      const train = document.getElementById("platformTrain").value.trim();
+      const station = document.getElementById("platformStation").value.trim();
+
+      if (train === "" || station === "") {
+        document.getElementById("platformResult").innerText = "Please fill both fields.";
+        return;
+      }
+
+      const platforms = [1, 2, 3, 4, 5, 6, 7];
+      const predicted = platforms[Math.floor(Math.random() * platforms.length)];
+      document.getElementById("platformResult").innerHTML =
+        `🚉 Predicted platform for Train <strong>${train}</strong> at <strong>${station}</strong>: <strong>Platform ${predicted}</strong> (Simulation)`;
+    }
+
+    function findStations() {
+      if (!navigator.geolocation) {
+        document.getElementById("nearbyStations").innerText = "Geolocation not supported.";
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(success, error);
+
+      function success(position) {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+        const link = `https://www.trainspnrstatus.com/trains-near-me?lat=${lat}&lng=${lon}`;
+        document.getElementById("nearbyStations").innerHTML =
+          `📍 <a href="${link}" target="_blank">Click to see nearby stations based on your location</a>`;
+      }
+
+      function error() {
+        document.getElementById("nearbyStations").innerText = "Unable to fetch your location.";
+      }
+    }
+  </script>
+
+</body>
+</html>  
+
+  
