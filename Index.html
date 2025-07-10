@@ -1,104 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Class 10 Result - Himanshu Shekhar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #00b4db, #0083b0);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .card {
-      background-color: white;
-      width: 90%;
-      max-width: 500px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      padding: 20px;
-      text-align: center;
-      animation: fadeIn 1.2s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .profile-pic {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #0083b0;
-      margin-top: -80px;
-      background-color: white;
-    }
-
-    h1 {
-      margin: 10px 0 5px;
-      color: #0083b0;
-    }
-
-    .school-name {
-      font-size: 15px;
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-    .marks {
-      text-align: left;
-      margin: 20px 0;
-    }
-
-    .marks div {
-      background: #f0f8ff;
-      margin: 8px 0;
-      padding: 10px 15px;
-      border-radius: 10px;
-      display: flex;
-      justify-content: space-between;
-      font-weight: 500;
-    }
-
-    .total {
-      margin-top: 20px;
-      font-size: 18px;
-      font-weight: bold;
-      color: #0083b0;
-    }
-
-    .footer {
-      margin-top: 15px;
-      font-size: 14px;
-      color: #444;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Booking System</title>
+    <link rel="stylesheet" href="https:                                                                 
+    <style>
+        body {
+            background-image: url('https:                                                
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 <body>
-  <div class="card">
-    <img src="https://i.imgur.com/0y0y0y0.png" alt="Profile" class="profile-pic" />
-    <h1>Himanshu Shekhar</h1>
-    <div class="school-name">Mount Assisi School, Poreyahat</div>
-
-    <div class="marks">
-      <div><span>English</span><span>92</span></div>
-      <div><span>Mathematics</span><span>95</span></div>
-      <div><span>Science</span><span>90</span></div>
-      <div><span>Social Studies</span><span>88</span></div>
-      <div><span>Hindi</span><span>93</span></div>
-      <div><span>Computer</span><span>98</span></div>
-    </div>
-
-    <div class="total">Total Marks: 556 / 600</div>
-    <div class="footer">🎉 Congratulations! You have passed with Distinction! 🎓</div>
-  </div>
-</body>
-</html>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Railway Booking</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="                                                                                                                     
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="                  
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Check PNR</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="container mt-5">
+            <h2 class="text-center">Book Your Ticket</h2>
+            <form>
+                <div class="form-group">
+                <label for="trainNumber">Train Number:</label>
+                <input type="number" class="form-control" id="trainNumber" placeholder="Enter Train Number">
+            </div>
+            <div class="form-group">
+                <label for="platformNumber">Platform Number:</label>
+                <input type="number" class="form-control" id="platformNumber" placeholder="Enter Platform Number">
+            </div>
+            <div class="form-group">
+                <label for="stationNumber">Station Number:</label>
+                <input type="number" class="form-control" id="stationNumber" placeholder="Enter Station Number">
+            </div>
+            <div class="form-group">
+                <label for="pnrNumber">PNR Number:</label>
+                <input type="number" class="form-control" id="pnrNumber" placeholder="Enter PNR Number">
+            </div>
+            <div class="form-group">
+                <label for="mobileNumber">Mobile Number:</label>
+                <input type="number" class="form-control" id="mobileNumber" placeholder="Enter Mobile Number">
+            </div>
+            <div class="form-group">
+                <label for="aadharCardNumber">Aadhar Card Number:</label>
+                <input type="number" class="form-control" id="aadharCardNumber" placeholder="Enter Aadhar Card Number">
+            </div>
+            <button type="submit" class="btn btn-primary">Book Ticket</button>
+        </form>
+    </section>
+    <section class="container mt-5">
+        <h2 class="text-center">Live Location</h2>
+        <div id="map" style="height: 400px; width: 100%;"></div>
+    </section>
+</main>
+<script src="https:                                                     
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+<script>
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 37.7749, lng: -122.4194},
+            zoom
+  
